@@ -1,0 +1,14 @@
+{
+  "include": ["src/**/*.ts", "src/internals.js", "src/credentials.js"],
+  "compilerOptions": {
+    "outDir": "./src/ts-compiled/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "ES6",
+    "target": "ES5",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+  }
+}

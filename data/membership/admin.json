@@ -1,0 +1,69 @@
+{
+    "name": "Admin",
+    "user": {
+        "view": "full-access",
+        "create": "full-access",
+        "modify": "full-access",
+        "delete": "full-access"  
+    },
+    "user/profile": {
+        "view": "full-access",
+        "create": "full-access",
+        "modify": "full-access",
+        "delete": "full-access"
+    },
+    "user/payment": {
+        "view": "full-access",
+        "create": "full-access",
+        "modify": "full-access",
+        "delete": "full-access"
+    },
+    "post": {
+        "view": "full-access",
+        "create": "full-access",
+        "modify": "full-access",
+        "delete": "full-access"
+    },
+    "post/comment": {
+        "view": "full-access",
+        "create": "full-access",
+        "modify": "full-access",
+        "delete": "full-access"
+    },
+    "course": {
+        "view": "full-access",
+        "create": "full-access",
+        "modify": "full-access",
+        "delete": "full-access"
+    },
+    "course/detail": {
+        "view": "full-access",
+        "create": "full-access",
+        "modify": "full-access",
+        "delete": "full-access"
+    },
+    "course/note": {
+        "view": "full-access",
+        "create": "full-access",
+        "modify": "full-access",
+        "delete": "full-access"
+    },
+    "course/comment": {
+        "view": "full-access",
+        "create": "full-access",
+        "modify": "full-access",
+        "delete": "full-access"
+    },
+    "course/video-lecture": {
+        "view": "full-access",
+        "create": "full-access",
+        "modify": "full-access",
+        "delete": "full-access"
+    },
+    "sandbox": {
+        "view": "full-access",
+        "create": "full-access",
+        "modify": "full-access",
+        "delete": "full-access"
+    }
+}

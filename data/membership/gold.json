@@ -1,0 +1,69 @@
+{
+    "name": "Gold",
+    "user": {
+        "view": "no-access",
+        "create": "no-access",
+        "modify": "no-access",
+        "delete": "no-access"  
+    },
+    "user/profile": {
+        "view": "limited-access",
+        "create": "no-access",
+        "modify": "limited-access",
+        "delete": "limited-access"
+    },
+    "user/payment": {
+        "view": "limited-access",
+        "create": "no-access",
+        "modify": "no-access",
+        "delete": "no-access"
+    },
+    "post": {
+        "view": "full-access",
+        "create": "no-access",
+        "modify": "no-access",
+        "delete": "no-access"
+    },
+    "post/comment": {
+        "view": "limited-access",
+        "create": "limited-access",
+        "modify": "limited-access",
+        "delete": "limited-access"
+    },
+    "course": {
+        "view": "limited-access",
+        "create": "no-access",
+        "modify": "no-access",
+        "delete": "no-access"
+    },
+    "course/detail": {
+        "view": "limited-access",
+        "create": "no-access",
+        "modify": "no-access",
+        "delete": "no-access"
+    },
+    "course/note": {
+        "view": "limited-access",
+        "create": "no-access",
+        "modify": "no-access",
+        "delete": "no-access"
+    },
+    "course/comment": {
+        "view": "limited-access",
+        "create": "no-access",
+        "modify": "no-access",
+        "delete": "no-access"
+    },
+    "course/video-lecture": {
+        "view": "limited-access",
+        "create": "no-access",
+        "modify": "no-access",
+        "delete": "no-access"
+    },
+    "sandbox": {
+        "view": "limited-access",
+        "create": "limited-access",
+        "modify": "limited-access",
+        "delete": "limited-access"
+    }
+}

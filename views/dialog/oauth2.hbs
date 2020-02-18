@@ -1,0 +1,232 @@
+<div id="modal-status" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div
+                class="modal-body d-flex flex-column justify-content-center align-items-center"
+            >
+                <div class="spinner-border text-primary" role="status"></div>
+                <div class="h5 mt-2 mb-0">Authorizing</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron min-vh-100 my-0">
+    <div class="container border rounded">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="rounded bg-primary py-2">
+                    <h1 class="text-white text-center">Digest Code</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center my-2">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <h5 class="text-center">
+                    <span class="text-muted">Authorize</span>
+                    {{clientName}}
+                </h5>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <strong>{{clientName}}</strong> is requesting access to
+                        your <strong>{{username}}</strong> account
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li
+                            class="list-group-item d-flex justify-content-between"
+                        >
+                            <div class="text-muted font-weight-bold">
+                                Permissions Required ({{numPermissions}})
+                            </div>
+                            <div
+                                id="btn-toggle-permission-list"
+                                class="btn p-0"
+                                data-toggle="collapse"
+                                data-target="#permission-list"
+                            >
+                                <i class="material-icons md-24"
+                                    >keyboard_arrow_up</i
+                                >
+                            </div>
+                        </li>
+                        <ul
+                            id="permission-list"
+                            class="list-group list-group-flush collapse show"
+                        >
+                            {{#each permissions}}
+                            <li
+                                class="list-group-item d-flex align-items-center justify-content-between"
+                            >
+                                <div class="m-0 p-0">
+                                    <i class="material-icons md-48">{{icon}}</i>
+                                    <div class="d-inline-block h4 ml-1 mb-0">
+                                        {{name}}
+                                    </div>
+                                </div>
+                                <div
+                                    class="d-inline-flex flex-row justify-content-center align-items-center m-0"
+                                >
+                                    {{#if view}}
+                                    <div
+                                        class="d-inline-flex flex-column justify-content-center align-items-center m-0 p-0 mr-3"
+                                    >
+                                        <i class="material-icons d-block m-0"
+                                            >remove_red_eye</i
+                                        >
+                                        <div class="h6 text-muted m-0">
+                                            view
+                                        </div>
+                                    </div>
+                                    {{/if}} {{#if create}}
+                                    <div
+                                        class="d-inline-flex flex-column justify-content-center align-items-center m-0 p-0 mr-3"
+                                    >
+                                        <i class="material-icons d-block m-0"
+                                            >note_add</i
+                                        >
+                                        <div class="h6 text-muted m-0">
+                                            create
+                                        </div>
+                                    </div>
+                                    {{/if}} {{#if modify}}
+                                    <div
+                                        class="d-inline-flex flex-column justify-content-center align-items-center m-0 p-0 mr-3"
+                                    >
+                                        <i class="material-icons d-block m-0"
+                                            >edit</i
+                                        >
+                                        <div class="h6 text-muted m-0">
+                                            modify
+                                        </div>
+                                    </div>
+                                    {{/if}} {{#if delete}}
+                                    <div
+                                        class="d-inline-flex flex-column justify-content-center align-items-center m-0 p-0"
+                                    >
+                                        <i class="material-icons d-block m-0"
+                                            >delete</i
+                                        >
+                                        <div class="h6 text-muted m-0">
+                                            delete
+                                        </div>
+                                    </div>
+                                    {{/if}}
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </ul>
+                    <div
+                        class="card-footer d-flex flex-column justify-content-center text-center"
+                    >
+                        <form method="POST" action="{{requestURI}}">
+                            <input type="hidden" value={{requestData}}/>
+                            <input
+                                type="submit"
+                                id="btn-authorize"
+                                class="btn btn-success btn-lg text-center font-weight-bold"
+                                value="Authorize {{clientName}}"
+                            />
+                        </form>
+                        <p class="h5 mt-2">
+                            <small class="text-muted"
+                                >Authorizing will redirect you to:</small
+                            >
+                        </p>
+                        <p class="h6">{{redirectURI}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="card">
+                    <div class="card-body px-0 py-2">
+                        <div
+                            class="d-flex justify-content-around align-items-center"
+                        >
+                            <div class="border rounded p-3">
+                                {{#if thirdParty}}
+                                <div class="m-0 p-0">
+                                    <i
+                                        class="d-inline-block material-icons md-18 mr-1"
+                                        >public</i
+                                    >
+                                    <div
+                                        class="d-inline text-muted font-weight-bold"
+                                    >
+                                        Third Party Application
+                                    </div>
+                                </div>
+                                {{else}}
+                                <div class="m-0 p-0">
+                                    <i
+                                        class="d-inline-block material-icons md-18 mr-1"
+                                        >verified_user</i
+                                    >
+                                    <div
+                                        class="d-inline text-muted font-weight-bold"
+                                    >
+                                        Digest Code Official
+                                    </div>
+                                </div>
+                                {{/if}}
+                            </div>
+                            <div class="border rounded p-3">
+                                <div class="m-0 p-0">
+                                    <i
+                                        class="d-inline-block material-icons md-18 mr-1"
+                                        >timelapse</i
+                                    >
+                                    <div
+                                        class="d-inline text-muted font-weight-bold"
+                                    >
+                                        Registered {{elapsedTime}} ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{> scripts }}
+
+<script>
+    $(function() {
+    $('#btn-toggle-permission-list')
+        .on('mouseenter', function(e) {
+            $(this).addClass('text-primary');
+        })
+        .on('mouseleave', function(e) {
+            $(this).removeClass('text-primary');
+        });
+
+    $('#permission-list')
+        .on('show.bs.collapse', function(e) {
+            $('#btn-toggle-permission-list i').html(
+                'keyboard_arrow_up',
+            );
+        })
+        .on('hide.bs.collapse', function(e) {
+            $('#btn-toggle-permission-list i').html(
+                'keyboard_arrow_down',
+            );
+        });
+
+    $('#btn-authorize').on('click', function(e) {
+        $('#modal-status').modal({
+            backdrop: 'static',
+            keyboard: false,
+        });
+    });
+});
+</script>
