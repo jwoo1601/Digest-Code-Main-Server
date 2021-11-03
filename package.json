@@ -60,7 +60,7 @@
     "passport-oauth2-client-password": "^0.1.2",
     "passport-strategy": "^1.0.0",
     "uuid": "^3.3.3",
-    "validator": "^12.1.0",
+    "validator": "^13.7.0",
     "winston": "^3.2.1",
     "winston-azure-application-insights": "^2.0.0",
     "winston-mongodb": "^5.0.1"
